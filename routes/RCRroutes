@@ -1,0 +1,9 @@
+import RCRcontroller from '../controller/RCRcontrollers.js'
+import express from 'express'
+const route=express.Router()
+route.post('/RCR/create',RCRcontroller.create)
+route.get('/RCR/list',RCRcontroller.list)
+route.get('/RCR/:id',RCRcontroller.RetrievedById)
+route.put('/RCR/update/:id',RCRcontroller.update)
+route.delete('/RCR/:id',RCRcontroller.deleteWorker)
+export default route;
