@@ -8,8 +8,8 @@ app.use(bodyParser.json()); // Parse JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(route) //connecting RCR route
 mongoose.connect('mongodb+srv://mireilleirafasha:XmvqhluyVvA9GD7Q@cluster0.4bfpmyu.mongodb.net/RCRsystem') //
-const port=6001;
-app.listen(port,()=>
+const ports=6001;
+app.listen(ports,()=>
 {
     console.log(`server is running on port ${port}`)
 })
