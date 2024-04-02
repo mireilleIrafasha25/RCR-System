@@ -7,7 +7,7 @@ app.use(express.json())// middleware for  parsing json bodies
 app.use(bodyParser.json()); // Parse JSON-encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(route) //connecting RCR route
-mongoose.connect('mongodb://localhost:27017/RCRWorkers') //
+mongoose.connect('mongodb+srv://mireilleirafasha:XmvqhluyVvA9GD7Q@cluster0.4bfpmyu.mongodb.net/RCRsystem') //
 const port=6001;
 app.listen(port,()=>
 {
