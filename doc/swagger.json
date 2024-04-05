@@ -1,0 +1,175 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "RCR API",
+      "description": "API documentation for RCR CRUD operations",
+      "version": "1.0.0"
+    },
+    "host": "localhost:6001",
+    "basePath": "",
+    "schemes": ["http", "https"],
+    "paths": {
+      "/RCR/create": {
+        "post": {
+          "summary": "Create a new Worker",
+          "description": "Create a new Worker of RCR organization",
+          "tags": ["RCR_Workers"],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "RCR_body",
+              "schema": {
+                "$ref": "#/definitions/RCR"
+              },
+              "required": true,
+              "description": "RCR object"
+            }
+          ],
+          "responses": {
+            "201": {
+              "description": "Contact created"
+            }
+          }
+        }
+      },
+      "/RCR/update/{id}": {
+        "put": {
+          "summary": "Update a RCR Workers by ID",
+          "description": "Update a RCR Workers by ID",
+          "tags": ["RCR_Workers"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the RCR to update",
+              "required": true,
+              "type": "string"
+            },
+            {
+              "in": "body",
+              "name": "RCR_body",
+              "schema": {
+                "$ref": "#/definitions/RCR"
+              },
+              "required": true,
+              "description": "Updated RCR object"
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "worker updated"
+            },
+            "404": {
+              "description": "worker not found"
+            }
+          }
+        }
+    },
+    "/delete/{id}":
+    {
+        "delete": {
+          "summary": "Delete a worker by ID",
+          "description": "Delete a worker by ID",
+          "tags": ["RCR_Workers"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of the worker to delete",
+              "required": true,
+              "type": "string"
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "worker deleted"
+            },
+            "404": {
+              "description": "worker not found"
+            }
+          }
+        }},
+        "/RCR/list":
+        {
+        "get": {
+          "summary": "Get a work by ID",
+          "description": "Get a contact by ID",
+          "tags": ["RCR_Workers"],
+
+          "responses": {
+            "200": {
+              "description": "Successful response"
+            },
+            "404": {
+              "description": "Contact not found"
+            }
+          }
+        }
+        
+      },
+    "/RCR/{id}":
+      {
+      "get": {
+        "summary": "Get a work by ID",
+        "description": "Get a contact by ID",
+        "tags": ["RCR_Workers"],
+        "parameters":[
+          {
+            "name": "id",
+            "in": "path",
+            "description": "ID of the worker to delete",
+            "required": true,
+            "type": "string"
+          }
+        ],
+
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          },
+          "404": {
+            "description": "Contact not found"
+          }
+        }
+      }
+      
+    }
+    
+    
+  },
+  "definitions": {
+    "RCR": {
+      "type": "object",
+      "properties": {
+        "Name": {
+          "type": "string",
+          "default":"kevine"
+        },
+        "Email": {
+          "type": "string",
+          "default":"@gmail.com"
+        },
+        "Phone": {
+          "type": "string",
+          "default":"0783010765"
+        },
+        "NationalID": {
+          "type": "string",
+          "default":"132983290789"
+        },
+        "Role": {
+          "type": "string",
+          "default":"Project Manager"
+  
+        },
+        "Gender": {
+          "type": "string",
+          "default":"Male"
+        }
+      },
+      "required": ["Name", "Email", "Phone", "NationalID", "Role","Gender"]
+    }
+  }
+
+}
+  
